@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 
 const router = express.Router();
 
@@ -20,18 +20,17 @@ const router = express.Router();
 // });
 
 router
-  .route("/humans")
+  .route('/humans')
   .get((req, res, next) => {
-    return next({ message: "Error" });
-    res.json({
+    return next({ message: 'Error' }).res.json({
       posts: [
         {
-          name: "Max",
+          name: 'Max',
           age: 18,
         },
 
         {
-          name: "Bob",
+          name: 'Bob',
           age: 18,
         },
       ],
@@ -40,10 +39,10 @@ router
   .post((req, res, next) => {
     const { body } = req;
     console.log(req.body);
-    res.status(201).json({ post: "Hello" });
+    res.status(201).json({ post: 'Hello' });
   });
 
-router.route("/humans/:humanId/:id").delete((req, res, next) => {
+router.route('/humans/:humanId/:id').delete((req, res, next) => {
   const { humanId, id } = req.params;
   console.log(humanId, id);
 
